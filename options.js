@@ -1,13 +1,9 @@
 module.exports = {
-    brusko:{
+    ddote:{
         reply_markup: JSON.stringify({
-            inline_keyboard: [
-                [{text: 'Малиновый лимонад', callback_data: 'Малиновый лимонад'}],
-                [{text: 'Ледяная клубника с земляникой', callback_data: 'Ледяная клубника с земляникой'}],
-                [{text: 'Энергетик с яблоком и киви', callback_data: 'Энергетик с яблоком и киви'}],
-                [{text: 'Энергетик с манго', callback_data: 'Энергетик с манго'}],
-                [{text: 'Энергетик с вишней', callback_data: 'Энергетик с вишней'}],
-                [{text: 'Фруктовое драже(скитлс)', callback_data: 'Фруктовое драже(скитлс)'}],
+            keyboard: [
+                [{text: '13', callback_data: '13'}, {text: '14', callback_data: '14'}, {text: '15', callback_data: '15'}],
+                [{text: '16', callback_data: '16'}, {text: '17', callback_data: '17'}, {text: '18', callback_data: '18'}],
             ]
         })
     },
