@@ -8,7 +8,7 @@ exec("git add .", (error) => {
     console.log('please')
     console.log(`git add .`);
 });
-exec("git commit -m 'testtttt'", (error) => {
+exec("git commit -m 'testtt'", (error) => {
     if (error) {
         console.log(`error: ${error}`);
         return;
