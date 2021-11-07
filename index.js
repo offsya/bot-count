@@ -6,7 +6,7 @@ const db = require('./bd.json');
 const fs = require('fs');
 const {parse} = require("nodemon/lib/cli");
 
-const token = '791193985:AAHor2DyerohydCj0BWncnmZtczKGFQC44A'
+const token = '791193985:AAEvyVx_o9pk3YhAKTqxG40ebPgajVMwwto'
 
 const bot = new TelegramApi(token, {polling: true})
 
@@ -62,7 +62,7 @@ const stats = {
     reply_markup: JSON.stringify({
         keyboard:[
             [{text: 'Общаг🤑', callback_data: '/money'}],
-            [{text: 'Наличие', callback_data: '/have'}],
+            [{text: 'Рассылка', callback_data: '/have'}],
             [{text: 'Выход🙈', callback_data: '/exit'}],
         ]
     })
@@ -190,8 +190,32 @@ const start = () => {
         if (text === 'Общаг🤑'){
             return bot.sendMessage(chatId, 'В общаге ' + file.Count + '$')
         }
-        if (text === "Наличие"){
-            return bot.sendMessage(chatId, 'Что сюда вставить можно, наличие каждой банки показывается при нажатии на жижу?')
+        if (text === "Рассылка"){
+                bot.sendMessage(chatId, `Brusko (30ml SALT HARD):
+    - Фруктовый мусс
+    - Гранатовый сок
+    - Тархун
+    - Тропический коктейль
+    - Энергетик с яблоком и киви
+    - Энергетик с манго
+    - Энергетик с вишней
+    - Фруктовое драже(скитлс)
+    
+MAD (30ml SALT HARD):
+    - Ice Lychee
+    - Mix Tropic
+    - Apple Passion Fruit
+    - Mix Wild Berries Red Bull
+    - Lime Bubble Gum
+    
+RedNeck (30ml SALT) - Premium
+    - Rought Wine ULTRA(Лимонад с виноградом, холодок)
+    - Drunk Harvest ULTRA(Лимонад с малиной, черной смородиной, холодок)
+    - Fresh Truck ULTRA(Лимонад с клубникой и малиной)
+		`)
+            bot.sendPhoto(chatId, './image/brusko.jpg')
+            bot.sendPhoto(chatId, './image/mad.jpg')
+            bot.sendPhoto(chatId, './image/redneck.jpg')
         }
         if (text === 'Выход🙈'){
             return bot.sendMessage(chatId, 'Menu', menu)
