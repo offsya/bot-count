@@ -1,24 +1,16 @@
-const { exec } = require("child_process");
+require('shelljs/global');
 
-exec("git add .", (error) => {
-    if (error) {
-        console.log(`error: ${error}`);
-        return;
-    }
-    console.log('please')
-    console.log(`git add .`);
+
+// Sync call to exec()
+var version = exec('node --version', {silent:true}).output;
+
+// Async call to exec()
+exec('git add .', function(status, output) {
+
 });
-exec("git commit -m 'testtt'", (error) => {
-    if (error) {
-        console.log(`error: ${error}`);
-        return;
-    }
-    console.log(`git commit`);
+exec('git commit -m '+ Math.random()*Math.random() +'', function(status, output) {
+
 });
-exec("git push origin master", (error) => {
-    if (error) {
-        console.log(`error: ${error}`);
-        return;
-    }
-    console.log(`git push`);
+exec("git push origin master", function(status, output) {
+
 });
