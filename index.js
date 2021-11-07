@@ -6,7 +6,7 @@ const db = require('./bd.json');
 const fs = require('fs');
 const {parse} = require("nodemon/lib/cli");
 
-const token = '791193985:AAGHCqZNIKW3ANrkjUzCUGhDQ5nKQiUdrA0'
+const token = '791193985:AAEDa87g5eRQrWMmXrkDf7EBIHF91crxFW4'
 
 const bot = new TelegramApi(token, {polling: true})
 
