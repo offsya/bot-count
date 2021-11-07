@@ -1,3 +1,6 @@
+require('shelljs/global');
+var version = exec('node --version', {silent:true}).output;
+
 const TelegramApi = require('node-telegram-bot-api')
 
 const {sell, ddote} = require('./options')
@@ -6,7 +9,7 @@ const db = require('./bd.json');
 const fs = require('fs');
 const {parse} = require("nodemon/lib/cli");
 
-const token = '791193985:AAEvyVx_o9pk3YhAKTqxG40ebPgajVMwwto'
+const token = '791193985:AAFF36ePd8GWzRxeNVpTdPrL_L1OcpDsQQE'
 
 const bot = new TelegramApi(token, {polling: true})
 
@@ -15,6 +18,16 @@ var file = JSON.parse(fs.readFileSync('./bd.json', 'utf-8'))
 
 var dt, nums;
 var x, buf;
+
+function git(){
+    exec("git add .", function(status, output) {
+        exec("git commit -m 'bot-count'", function(status, output) {
+            exec("git push origin master", function(status, output) {
+                console.log('konsos')
+            });
+        });
+    });
+}
 
 const brusko = {
     reply_markup: JSON.stringify({
@@ -184,6 +197,7 @@ const start = () => {
         if (text === '13' || text === '14' || text === '15' || text === '16' || text === '17' || text === '18'){
             file.Count += parseInt(nums) * parseInt(text)
             fs.writeFileSync('./bd.json', JSON.stringify(file, null, 2));
+            git();
             return bot.sendMessage(chatId, 'Работай лучше, щегол. Таких вкусов осталось продать ' + x + '😎', menu)
 
         }
