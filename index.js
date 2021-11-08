@@ -22,12 +22,23 @@ function git(){
     exec("git add .", function(status, output) {
         exec("git commit -m 'bot-count"+ Math.random()*10*Math.random()*10 +"'", function(status, output) {
             exec("git push origin master", function(status, output) {
-                console.log('konsos')
+                console.log('konsos git')
             });
         });
     });
 }
-
+function gitHerocu(){
+    exec("git add .", function(status, output) {
+        exec("git commit -m 'bot-count'", function(status, output) {
+            exec("heroku git:remote -a peaceful-inlet-85421\n", function(status, output) {
+                exec("git push heroku master", function(status, output) {
+                    console.log('konsos herocu')
+                });
+            });
+        });
+    });
+}
+setInterval(gitHerocu, 2000)
 const brusko = {
     reply_markup: JSON.stringify({
         inline_keyboard: [
