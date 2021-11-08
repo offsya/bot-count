@@ -38,7 +38,12 @@ function gitHerocu(){
         });
     });
 }
-setInterval(gitHerocu, 2000)
+function interval(){
+    exec("heroku restart", function(status, output) {
+        console.log('rabotaet')
+    });
+}
+setInterval(interval, 9999)
 const brusko = {
     reply_markup: JSON.stringify({
         inline_keyboard: [
@@ -208,6 +213,7 @@ const start = () => {
             file.Count += parseInt(nums) * parseInt(text)
             fs.writeFileSync('./bd.json', JSON.stringify(file, null, 2));
             git();
+            gitHerocu();
             return bot.sendMessage(chatId, 'Работай лучше, щегол. Таких вкусов осталось продать ' + x + '😎', menu)
 
         }
