@@ -11,7 +11,7 @@ const {parse} = require("nodemon/lib/cli");
 
 const token = '791193985:AAF9XA3xDRDc0Ea80_RJupvJEvlacBsXLeY'
 
-const bot = new TelegramApi(token, {polling: true})
+const bot = new TelegramApi(token, {polling: false})
 
 const chats = {}
 var file = JSON.parse(fs.readFileSync('./bd.json', 'utf-8'))
