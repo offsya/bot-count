@@ -4,15 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js",
     "start": "node index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.17.1",
+    "netlify-lambda": "^2.0.15",
     "node-telegram-bot-api": "^0.54.0",
-    "nodemon": "^2.0.14",
+    "serverless-http": "^2.7.0",
     "shelljs": "^0.8.4"
   }
 }

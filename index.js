@@ -7,9 +7,8 @@ const {sell, ddote} = require('./options')
 
 const db = require('./bd.json');
 const fs = require('fs');
-const {parse} = require("nodemon/lib/cli");
 
-const token = '791193985:AAESI4W4y8xPSyT825ZBRReIhhhrXB8y8B4'
+const token = '791193985:AAF3Jjrdyjx_3xu0hBU5Cvu7w_BlBQjd3es'
 
 const bot = new TelegramApi(token, {polling: true})
 
@@ -21,7 +20,7 @@ var x, buf;
 
 function git(){
     exec("git add .", function(status, output) {
-        exec("git commit -m 'bot-count'", function(status, output) {
+        exec("git commit -m 'bot-count"+ Math.random()*10*Math.random()*10 +"'", function(status, output) {
             exec("git push origin master", function(status, output) {
                 console.log('konsos')
             });
