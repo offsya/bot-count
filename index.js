@@ -43,7 +43,7 @@ function interval(){
         console.log('rabotaet')
     });
 }
-setInterval(interval, 1000)
+setInterval(interval, 99999)
 const brusko = {
     reply_markup: JSON.stringify({
         inline_keyboard: [
